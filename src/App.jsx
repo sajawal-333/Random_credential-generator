@@ -14,14 +14,11 @@ const generatePassword = () => {
 };
 
 const generateUsername = () => {
-  // Generate a nice random username using colors, adjectives and animals
-  const baseName = uniqueNamesGenerator({
-    dictionaries: [adjectives, colors, animals],
-    separator: '',
-    style: 'capital'
+  return uniqueNamesGenerator({
+    dictionaries: [adjectives, animals],
+    separator: '_',
+    style: 'lowerCase'
   });
-  // Append a random number to make it more realistic
-  return baseName + Math.floor(Math.random() * 100);
 };
 
 const generateCredentials = (count = 100) => {
